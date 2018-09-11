@@ -1,24 +1,20 @@
-package com.java1234.config;
+package com.gxc.springcloud.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * SpringCloud相关配置
- *
- * @author Administrator
+ * 配置类.
+ * @author 宫新程
+ * @date 2018/9/11 22:54
  */
 @Configuration
-public class SpringCloudConfig {
+public class ConfigBean {
 
-  /**
-   * 调用服务模版对象
-   *
-   * @return
-   */
   @Bean
   public RestTemplate getRestTemplate() {
     return new RestTemplate();
   }
+
 }
