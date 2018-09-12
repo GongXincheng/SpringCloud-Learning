@@ -1,8 +1,8 @@
 package com.gxc.springcloud.controller;
 
+import com.gxc.springcloud.entity.Dept;
 import java.util.List;
 import javax.annotation.Resource;
-import com.gxc.springcloud.entity.Dept;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
