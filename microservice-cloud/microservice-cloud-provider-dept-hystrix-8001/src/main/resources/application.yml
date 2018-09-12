@@ -1,0 +1,45 @@
+server:
+  port: 8001
+
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
+  #  type-aliases-package: com.gxc.springcloud.entity            # 所有Entity别名类所在包
+  mapper-locations: classpath:mybatis/mapper/*.xml       # mapper映射文件
+
+# 重要
+spring:
+  application:
+    name: microservice-cloud-provider-dept  # 微服务对外暴露的名称
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: org.gjt.mm.mysql.Driver            # mysql 驱动包
+    url: jdbc:mysql://localhost:3306/test                   # 数据库名称
+    username: root
+    password: root
+    dbcp2:
+      min-idle: 5                                            # 数据库连接池的最小维持连接数
+      initial-size: 5                                       # 初始化连接数
+      max-total: 5                                          # 最大连接数
+      max-wait-millis: 200                                 # 等待连接获取的最大超时时间
+
+eureka:
+  client: # 客户端注册进eureka服务列表内
+    service-url:
+      #defaultZone: http://localhost:7001/eureka
+      defaultZone: http://7001.eureka.com:7001/eureka/,http://7002.eureka.com:7002/eureka/,http://7003.eureka.com:7003/eureka/
+  instance:
+    instance-id: microservice-cloud-provider-dept-8001-hystrix
+    prefer-ip-address: true     # 访问路径可以显示IP地址
+
+
+# 需要引入依赖：spring-boot-starter-actuator
+info:
+  app.name: microservice-cloud-provider-dept-hystrix-8001
+  company.name: www.gxc.com
+  # 需要在pom文件配置 resource & maven-resources-plugin
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+  gxc.name: 宫新程
+  gxc.email: gongxincheng@jsh.com
+

@@ -18,10 +18,10 @@ import java.util.List;
  * @date 2018/9/11 16:21
  */
 
-//@FeignClient(
-//    value = "MICROSERVICECLOUD-DEPT",
-//    fallbackFactory = DeptClientServiceFallbackFactory.class)
-@FeignClient(value = "MICROSERVICE-CLOUD-PROVIDER-DEPT")
+@FeignClient(
+    value = "MICROSERVICE-CLOUD-PROVIDER-DEPT",
+    fallbackFactory = DeptClientServiceFallbackFactory.class)
+//@FeignClient(value = "MICROSERVICE-CLOUD-PROVIDER-DEPT")
 public interface DeptClientService {
 
   @RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)
