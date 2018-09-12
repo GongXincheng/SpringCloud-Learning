@@ -1,21 +1,14 @@
 package com.gxc.springcloud.controller;
 
-import com.gxc.springcloud.entity.Dept;
-
-import java.io.IOException;
 import java.util.List;
 import javax.annotation.Resource;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import com.gxc.springcloud.entity.Dept;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -35,7 +28,6 @@ public class DeptController_Consumer {
   public String page() {
     return "addDept";
   }
-
 
   /**
    * 添加部门.
@@ -67,5 +59,13 @@ public class DeptController_Consumer {
     return restTemplate.getForObject(URL_PRE + "/list", List.class);
   }
 
-
+  /**
+   * 消费者，服务发现.
+   * @return 服务发现
+   */
+  @GetMapping("/discovery")
+  @ResponseBody
+  public Object discovery() {
+    return restTemplate.getForObject(URL_PRE + "/discovery",Object.class);
+  }
 }

@@ -6,6 +6,7 @@ mybatis:
 #  type-aliases-package: com.gxc.springcloud.entity         # 所有Entity别名类所在包
   mapper-locations: classpath:mybatis/mapper/**/*.xml       # mapper映射文件
 
+# 重要
 spring:
   application:
     name: microservice-cloud-provider-dept  # 微服务对外暴露的名称
@@ -22,18 +23,23 @@ spring:
       max-total: 5                                          # 最大连接数
       max-wait-millis: 200                                 # 等待连接获取的最大超时时间
 
-#eureka:
-#  client: #客户端注册进eureka服务列表内
-#    service-url:
-#      #defaultZone: http://localhost:7001/eureka
-#      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
-#  instance:
-#    instance-id: microservicecloud-dept8001
-#    prefer-ip-address: true     #访问路径可以显示IP地址
+eureka:
+  client: # 客户端注册进eureka服务列表内
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+      #defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: microservice-cloud-provider-dept-8001
+    prefer-ip-address: true     # 访问路径可以显示IP地址
 
-#info:
-#  app.name: atguigu-microservicecloud
-#  company.name: www.atguigu.com
-#  build.artifactId: $project.artifactId$
-#  build.version: $project.version$
+
+# 需要引入依赖：spring-boot-starter-actuator
+info:
+  app.name: microservice-cloud-provider-dept
+  company.name: www.gxc.com
+  # 需要在pom文件配置 resource & maven-resources-plugin
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+  gxc.name: 宫新程
+  gxc.email: gongxincheng@jsh.com
 

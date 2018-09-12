@@ -11,6 +11,7 @@
     <module>microservice-cloud-api</module>
     <module>microservice-cloud-provider-dept-8001</module>
     <module>microservice-cloud-consumer-dept-80</module>
+    <module>microservice-cloud-eureka-7001</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -88,27 +89,27 @@
     </dependencies>
   </dependencyManagement>
 
-  <!--<build>-->
-    <!--<finalName>microservice-cloud</finalName>-->
-    <!--<resources>-->
-      <!--<resource>-->
-        <!--<directory>src/main/resources</directory>-->
-        <!--<filtering>true</filtering>-->
-      <!--</resource>-->
-    <!--</resources>-->
+  <build>
+    <finalName>microservice-cloud</finalName>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
 
-    <!--<plugins>-->
-      <!--<plugin>-->
-        <!--<groupId>org.apache.maven.plugins</groupId>-->
-        <!--<artifactId>maven-resources-plugin</artifactId>-->
-        <!--<configuration>-->
-          <!--<delimiters>-->
-            <!--<delimit>$</delimit>-->
-          <!--</delimiters>-->
-        <!--</configuration>-->
-      <!--</plugin>-->
-    <!--</plugins>-->
-  <!--</build>-->
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <configuration>
+          <delimiters>
+            <delimit>$</delimit>
+          </delimiters>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
 
 </project>
