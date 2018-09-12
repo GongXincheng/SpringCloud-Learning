@@ -19,7 +19,9 @@ import org.springframework.web.client.RestTemplate;
 @Controller
 public class DeptController_Consumer {
 
-  private static final String URL_PRE = "http://127.0.0.1:8001/dept";
+  //private static final String URL_PRE = "http://127.0.0.1:8001/dept";
+  //此处使用微服务的名称
+  private static final String URL_PRE = "http://MICROSERVICE-CLOUD-PROVIDER-DEPT/dept";
 
   @Resource
   private RestTemplate restTemplate;

@@ -3,7 +3,7 @@ server:
 
 eureka:
   instance:
-    hostname: eureka7001.com  # eureka服务端的实例名称
+    hostname: 7001.eureka.com  # eureka服务端的实例名称
     #hostname: localhost  # eureka服务端的实例名称
 
   client:
@@ -13,4 +13,4 @@ eureka:
       # 设置与 Eureka Server 交互的地址查询服务和注册服务都需要依赖这个地址（单机）。
       #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
       # 设置与 Eureka Server 交互的地址查询服务和注册服务都需要依赖这个地址（集群）。
-      defaultZone: http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+      defaultZone: http://7002.eureka.com:7002/eureka,http://7003.eureka.com:7003/eureka

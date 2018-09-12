@@ -19,21 +19,25 @@
       <version>${project.version}</version>
     </dependency>
 
- <!--   &lt;!&ndash; Eureka &ndash;&gt;
-    <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-eureka</artifactId>
-    </dependency>
-    &lt;!&ndash; Ribbon相关 &ndash;&gt;
+
+    <!-- Ribbon相关，Ribbon需要和Eureka整合 -->
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-ribbon</artifactId>
     </dependency>
-    &lt;!&ndash; Config &ndash;&gt;
+    <!-- Eureka -->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-eureka</artifactId>
+    </dependency>
+    <!-- Config -->
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-config</artifactId>
-    </dependency>-->
+    </dependency>
+    <!-- Ribbon相关，Ribbon需要和Eureka整合 -->
+
+
 
     <!-- Web支持 -->
     <dependency>
@@ -65,7 +69,6 @@
       <artifactId>unbescape</artifactId>
       <version>1.1.5.RELEASE</version>
     </dependency>
-
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
