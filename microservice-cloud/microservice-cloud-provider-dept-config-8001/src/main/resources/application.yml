@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: microservice-cloud-provider-dept-config-8001

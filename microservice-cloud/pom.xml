@@ -21,6 +21,7 @@
     <module>microservice-cloud-config-3344</module>
     <module>microservice-cloud-config-client-3355</module>
     <module>microservice-cloud-eureka-config-7001</module>
+    <module>microservice-cloud-provider-dept-config-8001</module>
   </modules>
   <packaging>pom</packaging>
 

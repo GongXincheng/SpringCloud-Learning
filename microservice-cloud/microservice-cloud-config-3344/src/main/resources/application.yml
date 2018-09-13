@@ -4,6 +4,7 @@ server:
 spring:
   application:
     name:  microservice-cloud-config
+
   cloud:
     config:
       server:
