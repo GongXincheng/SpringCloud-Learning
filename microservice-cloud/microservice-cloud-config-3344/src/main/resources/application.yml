@@ -1,0 +1,11 @@
+server: 
+  port: 3344 
+  
+spring:
+  application:
+    name:  microservice-cloud-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:GongXincheng/SpringCloud-Learning.git #GitHub上面的git仓库名字
