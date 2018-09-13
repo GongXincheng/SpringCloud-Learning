@@ -1,0 +1,37 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: microservice-cloud-zuul-gateway-9527
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://7001.eureka.com:7001/eureka/,http://7002.eureka.com:7002/eureka/,http://7003.eureka.com:7003/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: gateway-9527.com
+
+
+# 配置 Zuul 路由的映射规则
+zuul:
+  routes:
+    mydept.serviceId: microservice-cloud-provider-dept  # 服务提供者的在Eureka中的name
+    mydept.path: /mydept/**  # 配置成功后，可使用：http://myzuul.com:9527/mydept/dept/get/1 访问
+  ignored-services: microservice-cloud-provider-dept
+  # ignored-services: "*"  # 批处理
+  # 配置后，不可使用 http://zuul.com:9527/microservice-cloud-provider-dept/dept/get/1 访问（原真实服务名的忽略）
+  prefix: /gxc  # 配置成功后，可使用：http://myzuul.com:9527/gxc/mydept/dept/get/1 访问
+
+
+# 需要引入依赖：spring-boot-starter-actuator
+info:
+  app.name: microservice-cloud-zuul-gateway
+  company.name: www.gxc.com
+  # 需要在pom文件配置 resource & maven-resources-plugin
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+  gxc.name: 宫新程
+  gxc.email: gongxincheng@jsh.com
+
