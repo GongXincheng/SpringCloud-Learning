@@ -12,7 +12,10 @@ spring:
 eureka: 
   client: 
     service-url: 
-      defaultZone: http://7001.eureka.com:7001/eureka/
+      defaultZone: http://7001.eureka.com:7001/eureka/,http://7002.eureka.com:7002/eureka/,http://7003.eureka.com:7003/eureka/
+    instance:
+      instance-id: microservicecloud-config-client-dev
+      prefer-ip-address: true     # 访问路径可以显示IP地址
 ---
 server: 
   port: 8202 
@@ -23,4 +26,7 @@ spring:
 eureka: 
   client: 
     service-url: 
-      defaultZone: http://7001.eureka.com:7001/eureka/
+      defaultZone: http://7001.eureka.com:7001/eureka/,http://7002.eureka.com:7002/eureka/,http://7003.eureka.com:7003/eureka/
+    instance:
+      instance-id: microservicecloud-config-client-test
+      prefer-ip-address: true     # 访问路径可以显示IP地址
