@@ -2,17 +2,18 @@ package com.gxc.springcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
+ * 全配置版 Eureka Server.
  * @author 宫新程
- * @date 2018/9/13 15:05
+ * @date 2018/9/13 16:40
  */
 @SpringBootApplication
-@EnableEurekaClient //启用Eureka
-public class ConfigClient_3355_App {
+@EnableEurekaServer
+public class EurekaClient_7001 {
 
   public static void main(String[] args) {
-    SpringApplication.run(ConfigClient_3355_App.class, args);
+    SpringApplication.run(EurekaClient_7001.class, args);
   }
 }
