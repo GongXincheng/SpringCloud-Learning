@@ -1,0 +1,33 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: microservice-cloud-zuul-gateway
+
+
+  # 需要注册进 Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://7001.eureka.com:7001/eureka,http://7002.eureka.com:7002/eureka,http://7003.eureka.com:7003/eureka
+  instance:
+    instance-id: cloud-zuul-gateway
+    prefer-ip-address: true
+
+# zuul
+zuul:
+  # 可设统一前缀
+  prefix: /gxc
+  # 原真实服务名忽略, 单个具体，多个可以用"*"
+  ignored-services: microservice-cloud-provider-dept
+  routes:
+    mydept.serviceId: microservice-cloud-provider-dept
+    mydept.path: /mydept/**
+
+
+info:
+  app.name: microservice-cloud-zuul-gateway
+  company.name: www.gxc.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$

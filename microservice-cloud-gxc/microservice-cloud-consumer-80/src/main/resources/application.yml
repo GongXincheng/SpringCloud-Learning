@@ -1,0 +1,15 @@
+server:
+  port: 80
+
+spring:
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
+
+# Eureka 在消费客户端配置：注意不要将微服务注册到Eureka
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://7001:eureka.com:7001/eureka/,http://7002:eureka.com:7002/eureka/,http://7003.eureka.com:7003/eureka/
+

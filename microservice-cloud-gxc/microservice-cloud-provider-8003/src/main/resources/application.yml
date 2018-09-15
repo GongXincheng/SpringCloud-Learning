@@ -1,0 +1,43 @@
+server:
+  port: 8003
+
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
+  mapper-locations: classpath:mybatis/mapper/**/*.xml       # mapper映射文件
+  type-aliases-package: com.gxc.cloud.entity
+
+# 重要
+spring:
+  application:
+    name: microservice-cloud-provider-dept  # 微服务对外暴露的名称
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: org.gjt.mm.mysql.Driver            # mysql 驱动包
+    url: jdbc:mysql://localhost:3306/test                   # 数据库名称
+    username: root
+    password: root
+
+    dbcp2:
+      min-idle: 5                                            # 数据库连接池的最小维持连接数
+      initial-size: 5                                       # 初始化连接数
+      max-total: 5                                          # 最大连接数
+      max-wait-millis: 200                                 # 等待连接获取的最大超时时间
+
+# Eureka 客户端配置
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: microservice-provider-8003
+
+  client:
+    service-url:
+      # defaultZone: http://localhost:7001/eureka
+      defaultZone: http://7001.eureka.com:7001/eureka,http://7002.eureka.com:7002/eureka,http://7003.eureka.com:7003/eureka
+
+# 需要依赖：spring-boot-starter-actuator
+info:
+  app.appname: microservice-cloud-provider-8003
+  app.version: 1.0.0
+  author.name: GXC
+  author.email: gongxincheng@jsh.com

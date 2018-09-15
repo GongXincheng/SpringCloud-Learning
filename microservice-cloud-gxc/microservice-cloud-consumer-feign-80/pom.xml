@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>microservice-cloud</artifactId>
+    <groupId>com.gxc</groupId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>../microservice-cloud/pom.xml</relativePath>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>microservice-cloud-consumer-feign-80</artifactId>
+
+  <dependencies>
+    <!-- 自己定义的api -->
+    <dependency>
+      <groupId>com.gxc</groupId>
+      <artifactId>microservice-cloud-api</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+    <!-- Ribbon相关，Ribbon需要和Eureka整合 -->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-ribbon</artifactId>
+    </dependency>
+    <!-- Eureka -->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-eureka</artifactId>
+    </dependency>
+    <!-- Config -->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-config</artifactId>
+    </dependency>
+    <!-- Ribbon相关，Ribbon需要和Eureka整合 -->
+
+    <!-- Web支持 -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    <!-- 修改后立即生效，热部署 -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>springloaded</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+    </dependency>
+
+    <!-- Thymeleaf -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+
+    <!-- 使用遗留html5 的依赖包 -->
+    <dependency>
+      <groupId>net.sourceforge.nekohtml</groupId>
+      <artifactId>nekohtml</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.unbescape</groupId>
+      <artifactId>unbescape</artifactId>
+      <version>1.1.5.RELEASE</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+    </dependency>
+  </dependencies>
+
+</project>
